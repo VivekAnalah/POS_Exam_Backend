@@ -6,8 +6,8 @@ const cors = require("cors");
 const PORT = process.env.PORT || 8080;
 const connect = require("./src/Config/db");
 
-const questionRoute = require("./src/Questions/question.route");
-const answerRoute = require("./src/Answers/answers.route");
+const questionRoute = require("./src/routes/question.route");
+const answerRoute = require("./src/routes/answers.route");
 
 const app = express();
 

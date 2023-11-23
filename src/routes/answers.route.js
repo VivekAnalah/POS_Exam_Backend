@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express.Router();
 
-const Question = require("../Questions/question.model");
+const Question = require("../models/question.model");
 
 app.post("/", async (req,res) => {
 
@@ -13,14 +13,14 @@ app.post("/", async (req,res) => {
         let data = await Question.find({}, {Correct_Answer : 1})
         let points = 0;
 
-        console.log(data)
+       
 
         for(let i=0;i<user_answers.length;i++){
             if(user_answers[i] === data[i].Correct_Answer){
                 points++;
             }
         }
-console.log(points)
+        
         return res.send({Status: "OK", points : points})
 
     }
